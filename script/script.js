@@ -1,8 +1,8 @@
 // let interviewList = [];
 // let rejectList = [];
 let currentStatus = 'all';
-const tabActive = ["bg-navy","border-navy","text-white"];
-const tabInactive = ["bg-transparent","text-slate-700","border-slate-200"]
+const tabActive = ["bg-blue-700","border-blue-800","text-white"];
+const tabInactive = ["bg-transparent","text-black","border-black"]
 
 
 let totalCount = document.getElementById('total-count')
@@ -35,11 +35,15 @@ function btnSwap(tab) {
      const tabs = ['all','interview','reject']
 
      for(const t of tabs){
-       const tabName =  document.getElementById("tab-"+t)
-    //    console.log(tabName)
+       const tabName =  document.getElementById("tab-" + t)
        if(t === tab){
         tabName.classList.add( ... tabActive)
         tabName.classList.remove( ... tabInactive)
        }
+       else{
+        tabName.classList.add( ... tabInactive);
+        tabName.classList.remove ( ... tabActive)
+       }
      }
 }
+btnSwap(currentStatus)
